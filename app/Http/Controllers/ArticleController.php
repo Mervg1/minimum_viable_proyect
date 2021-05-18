@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use App\Models\Form;
 
 class ArticleController extends Controller
 {
@@ -23,13 +24,12 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function getArticles(Request $request, Article $article)
+    public function getArticles(Request $request, Form $form)
     {
-        $data = $article->getData();
+        $data = $form->getData();
         return \DataTables::of($data)
             ->addColumn('Actions', function($data) {
-                return '<button type="button" class="btn btn-success btn-sm" id="getEditArticleData" data-id="'.$data->id.'">Edit</button>
-                    <button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#DeleteArticleModal" class="btn btn-danger btn-sm" id="getDeleteId">Delete</button>';
+                return '<button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#DeleteArticleModal" class="btn btn-danger btn-sm" id="getDeleteId">Delete</button>';
             })
             ->rawColumns(['Actions'])
             ->make(true);
@@ -113,7 +113,7 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        $article = new Article;
+        $article = new Form;
         $article->deleteData($id);
 
         return response()->json(['success'=>'Article deleted successfully']);

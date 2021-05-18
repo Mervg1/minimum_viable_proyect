@@ -7,6 +7,19 @@ use App\Models\Form;
 
 class FormController extends Controller
 {
+
+    public function getForms(Request $request, Article $article)
+    {
+        $data = $article->getData();
+        return \DataTables::of($data)
+            ->addColumn('Actions', function($data) {
+                return '<button type="button" class="btn btn-success btn-sm" id="getEditArticleData" data-id="'.$data->id.'">Edit</button>
+                    <button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#DeleteArticleModal" class="btn btn-danger btn-sm" id="getDeleteId">Delete</button>';
+            })
+            ->rawColumns(['Actions'])
+            ->make(true);
+    }
+
     //
     /**
      * Display a listing of the resource.
@@ -94,11 +107,13 @@ class FormController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Form $form)
+    public function destroy($id)
     {
         //
-        ddd($form);
-        $form->delete();
-        return redirect()->route('form.table');
+        ddd($id);
+        $article = new Form;
+        $article->deleteData($id);
+
+        return response()->json(['success'=>'Article deleted successfully']);
     }
 }

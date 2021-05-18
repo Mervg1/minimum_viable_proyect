@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,5 @@ Route::resource('articles', 'ArticleController');
 Route::get('get-articles', [ArticleController::class, 'getArticles'])->name('get-articles');
 
 Route::resource('form', 'FormController');
+
+Route::get('get-forms', [FormController::class, 'getForms'])->name('get-forms');
