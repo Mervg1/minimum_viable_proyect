@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 // Resource Route for article.
-Route::resource('articles', ArticleController::class);
+Route::resource('articles', 'ArticleController');
 // Route for get articles for yajra post request.
 Route::get('get-articles', [ArticleController::class, 'getArticles'])->name('get-articles');
+
+Route::resource('form', 'FormController');
