@@ -50,7 +50,7 @@
                     <a name="" id=""  href="{{ route('articles.index') }}" class="btn btn-secundary"  role="button">Tabla</a>
                     </li>
                     <li class="nav-item">
-                        <a name="" id="" class="btn btn-secundary"  role="button">Estadisticas</a>
+                        <a name="" id="" href="{{ route('get-char') }}" class="btn btn-secundary"  role="button">Estadisticas</a>
                     </li>
                     
                 </ul>

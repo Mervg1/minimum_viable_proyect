@@ -27,3 +27,8 @@ Route::get('get-articles', [ArticleController::class, 'getArticles'])->name('get
 Route::resource('form', 'FormController');
 
 Route::get('get-forms', [FormController::class, 'getForms'])->name('get-forms');
+
+Route::get('chart-line', 'ChartController@chartLine')->name('get-char');
+Route::get('chart-line-ajax', 'ChartController@chartLineAjax');
+
+Route::resource('charts', 'ChartController');
