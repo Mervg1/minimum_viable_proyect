@@ -16,5 +16,6 @@
 @yield('content')
 
 @yield('script')
+@include('includes.footer')
 </body>
 </html>

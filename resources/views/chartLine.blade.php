@@ -10,7 +10,7 @@
         <div class="container">
         <h1 class="mt-5 text-center">Estadísticas Cuestionario de Salud Mental</h1>
   
-        <select class="sel" name="year">
+        <select class="sel" name="year" style="visibility: hidden">
             <option value="2021">Year 2021</option>
             <option value="2020">Year 2020</option>
             <option value="2019">Year 2019</option>
@@ -27,10 +27,12 @@
 
         
 
-        <h4 class="mt-5 text-center">Percepcion de ambiente laboral</h4>
+        
 
         
     </div>
+
+    @include('includes.footer')
           
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>

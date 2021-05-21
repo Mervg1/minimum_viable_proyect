@@ -5,37 +5,19 @@
         color: black;
     }
 
-    .bg-rojo3{
-        background-color: #C72523 !important;
+    .bg-color{
+        background-color: #3498DB;
     }
 
-    .bg-azul1{
-        background-color: #4D8AB5 !important;
-    }
-
-    .bg-rojo1{
-        background-color: #4D1518 !important;
-    }
-
-    .bg-rojo2{
-        background-color: #951E22 !important;
-    }
-
-
-
-    .bg-gris1{
-        background-color: #B9BEBA !important;
-    }
-
-    .bg-azul2{
-        background-color: #1E2639 !important;
+    .elements-color{
+        color: white !important;
     }
     
    
    
 </style>
 <div>
-    <nav class="navbar navbar-expand-lg navbar-secondary bg-rojo3">
+    <nav class="navbar navbar-expand-lg navbar-secondary bg-color">
        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -44,13 +26,13 @@
             
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a name="" id="" href="{{ route('form.index') }}" class="btn btn-secundary"  role="button">Cuestionario</a>
+                    <a name="" id="" href="{{ route('form.index') }}" class="btn btn-secundary elements-color"  role="button">Cuestionario</a>
                     </li>
                     <li class="nav-item">
-                    <a name="" id=""  href="{{ route('articles.index') }}" class="btn btn-secundary"  role="button">Tabla</a>
+                    <a name="" id=""  href="{{ route('articles.index') }}" class="btn btn-secundary elements-color"  role="button">Tabla</a>
                     </li>
                     <li class="nav-item">
-                        <a name="" id="" href="{{ route('get-char') }}" class="btn btn-secundary"  role="button">Estadisticas</a>
+                        <a name="" id="" href="{{ route('get-char') }}" class="btn btn-secundary elements-color"  role="button">Estadisticas</a>
                     </li>
                     
                 </ul>

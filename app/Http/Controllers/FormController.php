@@ -63,7 +63,7 @@ class FormController extends Controller
         $formulario->help = $arr['help'];
         $formulario->save();
 
-        return view('form.form');
+        return view('form.form')->with('message', 'The success message!');
     }
 
     /**

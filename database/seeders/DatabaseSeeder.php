@@ -15,7 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $this->call(UserSeeder::class);
+        /*DB::table('users')->insert([
+            'name' => Str::random(10),
+            'age' => Str::random(10).'@gmail.com',
+            'password' => Hash::make('password'),
+        ]);*/
         
     }
 }

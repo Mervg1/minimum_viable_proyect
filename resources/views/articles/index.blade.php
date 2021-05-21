@@ -108,9 +108,9 @@
                 url: "articles/"+id,
                 method: 'DELETE',
                 success: function(result) {
+                    $('#DeleteArticleModal').modal('hide');
                     setInterval(function(){ 
                         $('.datatable').DataTable().ajax.reload();
-                        $('#DeleteArticleModal').hide();
                     }, 1000);
                 }
             });

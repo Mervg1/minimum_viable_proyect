@@ -11,22 +11,22 @@
     <body>
         @include('includes.navbar')
         <div class="container mt-5">
-            <h1>Cuestionario Salud Mental en el Trabajo</h1>
+            <h1 class="text-center" >Cuestionario Salud Mental en el Trabajo</h1>
             <form class="mt-5" action="{{route('form.store')}}" method="POST">
                 @csrf
                 <div class="form-group">
                   <label for="name">Nombre</label>
-                  <input type="name" class="form-control" id="exampleInputName" aria-describedby="Name" placeholder="Nombre" name="name">
+                  <input type="name" class="form-control" id="exampleInputName" aria-describedby="Name" placeholder="Nombre" name="name" required>
                   <small id="nameHelp" class="form-text text-muted">Si no se siente cómodo poniendo su nombre, ponga la palabra Anónimo.</small>
                 </div>
                 <div class="form-group">
                     <label for="age">Edad</label>
-                    <input type="age" class="form-control" id="exampleInputAge" aria-describedby="Age" placeholder="Edad" name="age">
+                    <input type="age" class="form-control" id="exampleInputAge" aria-describedby="Age" placeholder="Edad" name="age" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">¿En las últimas 4 semanas, ha tenido problemas de trabajo o salud por salud física?</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="fourWeeks">
-                      <option value="Seleccione una opción..." >Seleccione una opción...</option>
+                    <select class="form-control" id="exampleFormControlSelect1" name="fourWeeks" required>
+                      <option value="" >Seleccione una opción...</option>
                       <option value="No" >No</option>
                       <option value="Yes" >Si</option>
                       <option value="Nose" >No lo sé</option>
@@ -34,8 +34,8 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">¿Cómo calificaría su salud mental?</label>
-                    <select class="form-control" id="exampleFormControlSelect2" name="mentalHealth">
-                      <option value="Seleccione una opción..." >Seleccione una opción...</option>
+                    <select class="form-control" id="exampleFormControlSelect2" name="mentalHealth" required>
+                      <option value="" >Seleccione una opción...</option>
                       <option value="Excelente" >Excelente</option>
                       <option value="Algo Bueno" >Algo Bueno</option>
                       <option value="Promedio" >Promedio</option>
@@ -46,8 +46,8 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect3">¿Te has sentido deprimido durante las últimas 2 semanas?</label>
-                    <select class="form-control" id="exampleFormControlSelect3" name="depressed">
-                      <option value="Seleccione una opción..." >Seleccione una opción...</option>
+                    <select class="form-control" id="exampleFormControlSelect3" name="depressed" required>
+                      <option value="" >Seleccione una opción...</option>
                       <option value="No" >No</option>
                       <option value="Si" >Si</option>
                       <option value="No lo sé" >No lo sé</option>
@@ -55,8 +55,8 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect4">¿Tu salud te impide completar tus actividades con éxito?</label>
-                    <select class="form-control" id="exampleFormControlSelect4" name="activity">
-                      <option value="Seleccione una opción..." >Seleccione una opción...</option>
+                    <select class="form-control" id="exampleFormControlSelect4" name="activity" required>
+                      <option value="" >Seleccione una opción...</option>
                       <option value="No" >No</option>
                       <option value="Yes" >Si</option>
                       <option value="Nose" >No lo sé</option>
@@ -64,8 +64,8 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect5">¿Cómo consideras tu ámbiente laboral?</label>
-                    <select class="form-control" id="exampleFormControlSelect5" name="workEnviroment">
-                        <option value="Seleccione una opción..." >Seleccione una opción...</option>
+                    <select class="form-control" id="exampleFormControlSelect5" name="workEnviroment" required>
+                        <option value="" >Seleccione una opción...</option>
                         <option value="Excelente" >Excelente</option>
                         <option value="Algo Bueno" >Algo Bueno</option>
                         <option value="Promedio" >Promedio</option>
@@ -101,22 +101,47 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect6">¿Consideras que necesitas un programa de ayuda psicológica?</label>
-                    <select class="form-control" id="exampleFormControlSelect6" name="help">
-                      <option value="Seleccione una opción..." >Seleccione una opción...</option>
+                    <select class="form-control" id="exampleFormControlSelect6" name="help" required>
+                      <option value="" >Seleccione una opción...</option>
                       <option value="No" >No</option>
                       <option value="Yes" >Si</option>
                       <option value="Nose" >No lo sé</option>
                     </select>
                 </div>
                 <div class="form-check mb-3">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
                   <label class="form-check-label" for="exampleCheck1">Acepto los términos y condiciones de privacidad</label>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="mt-4 btn success btn-lg btn-block elements-color alert alert-success">Subir encuesta</button>
               </form>
 
         </div>
         
     </body>
+    @include('includes.footer')
 </html>
+
+<style>
+  @font-face {
+      font-family: "Shaka Pow";
+      src: url('/fonts/Shaka Pow.ttf');
+      color: black;
+  }
+
+  .bg-color{
+      background-color: #3498DB !important;
+  }
+
+  .elements-color{
+      color: white !important;
+  }
+
+  .success{
+      background-color: #2ECC71 !important;
+  }
+  
+ 
+ 
+</style>
+
